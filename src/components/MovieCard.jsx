@@ -1,12 +1,12 @@
 // src/components/MovieCard.js
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function MovieCard({ movie }) {
   return (
-    <div className="movie-card">
-      <h3>{movie.title}</h3>
-      <Link to={`/movie/${movie.id}`}>View Details</Link>
-    </div>
+    <article>
+      <h2>{movie.title}</h2>
+      <Link to={`/movie/${movie.id}`}>View Info</Link>
+    </article>
   );
 }
 

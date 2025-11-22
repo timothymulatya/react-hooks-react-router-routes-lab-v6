@@ -21,9 +21,10 @@ function Directors() {
           <article key={director.id}>
             <h2>{director.name}</h2>
             <ul>
-              {director.movies.map((movie, index) => (
-                <li key={index}>{movie}</li>
-              ))}
+              {director.movies &&
+                director.movies.map((movie, index) => (
+                  <li key={index}>{movie}</li>
+                ))}
             </ul>
           </article>
         ))}

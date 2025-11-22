@@ -21,9 +21,10 @@ function Actors() {
           <article key={actor.id}>
             <h2>{actor.name}</h2>
             <ul>
-              {actor.movies.map((movie, index) => (
-                <li key={index}>{movie}</li>
-              ))}
+              {actor.movies &&
+                actor.movies.map((movie, index) => (
+                  <li key={index}>{movie}</li>
+                ))}
             </ul>
           </article>
         ))}

@@ -5,9 +5,9 @@ function ErrorPage() {
   return (
     <>
       <NavBar />
-      <div className="error-page">
+      <main>
         <h1>Oops! Looks like something went wrong.</h1>
-      </div>
+      </main>
     </>
   );
 }
