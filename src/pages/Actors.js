@@ -1,34 +1,34 @@
 // src/pages/Actors.js
-import { useState, useEffect } from 'react';
-import NavBar from '../components/NavBar';
+import NavBar from "../components/NavBar";
+
+const actors = [
+  {
+    name: "Benedict Cumberbatch",
+    movies: ["Doctor Strange", "The Imitation Game", "Sherlock"],
+  },
+  {
+    name: "Scarlett Johansson",
+    movies: ["Lucy", "Black Widow", "The Avengers"],
+  },
+];
 
 function Actors() {
-  const [actors, setActors] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:4000/actors')
-      .then(r => r.json())
-      .then(data => setActors(data))
-      .catch(error => console.error('Error fetching actors:', error));
-  }, []);
-
   return (
-    <>
+    <div>
       <NavBar />
-      <div className="actors">
-        <h1>Actors Page</h1>
-        {actors.map(actor => (
-          <article key={actor.id}>
-            <h2>{actor.name}</h2>
-            <ul>
-              {actor.movies && actor.movies.map((movie, index) => (
-                <li key={index}>{movie}</li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </div>
-    </>
+      <h1>Actors Page</h1>
+
+      {actors.map((a, i) => (
+        <article key={i}>
+          <h2>{a.name}</h2>
+          <ul>
+            {a.movies.map((m, j) => (
+              <li key={j}>{m}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
   );
 }
 
