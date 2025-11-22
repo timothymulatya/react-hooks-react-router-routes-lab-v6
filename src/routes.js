@@ -6,7 +6,7 @@ import Directors from './pages/Directors';
 import Actors from './pages/Actors';
 import ErrorPage from './pages/ErrorPage';
 
-const routes = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
@@ -29,4 +29,4 @@ const routes = createBrowserRouter([
   }
 ]);
 
-export default routes;
+export default router;

@@ -1,7 +1,7 @@
 // src/pages/Movie.js
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import NavBar from "../components/NavBar";
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import NavBar from '../components/NavBar';
 
 function Movie() {
   const { id } = useParams();
@@ -10,17 +10,17 @@ function Movie() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:3000/movies/${id}`)
-      .then((r) => {
-        if (!r.ok) throw new Error("Movie not found");
+    fetch(`http://localhost:4000/movies/${id}`)
+      .then(r => {
+        if (!r.ok) throw new Error('Movie not found');
         return r.json();
       })
-      .then((data) => {
+      .then(data => {
         setMovie(data);
         setLoading(false);
       })
-      .catch((error) => {
-        console.error("Error fetching movie:", error);
+      .catch(error => {
+        console.error('Error fetching movie:', error);
         setLoading(false);
       });
   }, [id]);
@@ -35,12 +35,11 @@ function Movie() {
         <h1>{movie.title}</h1>
         <p>Time: {movie.time}</p>
         <div className="genres">
-          {movie.genres &&
-            movie.genres.map((genre, index) => (
-              <span key={index} className="genre-tag">
-                {genre}
-              </span>
-            ))}
+          {movie.genres && movie.genres.map((genre, index) => (
+            <span key={index} className="genre-tag">
+              {genre}
+            </span>
+          ))}
         </div>
       </div>
     </>

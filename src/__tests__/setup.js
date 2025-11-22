@@ -1,7 +1,7 @@
 // src/__tests__/setup.js
-import { afterEach } from 'vitest';
-import { cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom/vitest';
+require('@testing-library/jest-dom');
+
+const { cleanup } = require('@testing-library/react');
 
 afterEach(() => {
   cleanup();

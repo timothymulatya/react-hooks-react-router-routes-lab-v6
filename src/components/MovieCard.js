@@ -1,5 +1,5 @@
 // src/components/MovieCard.js
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function MovieCard({ movie }) {
   return (
